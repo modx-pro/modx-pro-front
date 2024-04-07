@@ -620,6 +620,40 @@ img {
   --color-white: #ffffff;
 }
 
+.ui-colors-list__title {
+  margin-bottom: 1.5rem;
+}
+
+.ui-colors-list__items {
+  display: flex;
+}
+
+.ui-colors-list__items:not(:last-child) {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.1875rem solid rgb(247, 248, 249);
+}
+
+.ui-colors-list__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-colors-list__item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.ui-colors-list__item-name {
+  margin-bottom: 0.25rem;
+}
+
+.ui-colors-list__item-box {
+  width: 6.25rem;
+  height: 6.25rem;
+  border: 0.1875rem solid rgb(247, 247, 247);
+  border-radius: 1.25rem;
+}
+
 @media (min-width: 640px) {
   .l-default {
     padding: 0 1.25rem;
@@ -644,4 +678,4 @@ img {
     padding: 0;
   }
 }
-/*# sourceMappingURL=maps/main.css.map */
+/*# sourceMappingURL=maps/ui.css.map */

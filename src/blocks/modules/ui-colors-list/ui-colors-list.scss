@@ -1,0 +1,35 @@
+.ui-colors-list {
+  &__title {
+    margin-bottom: to-rem(24);
+  }
+
+  &__items {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: to-rem(32);
+      padding-bottom: to-rem(32);
+      border-bottom: to-rem(3) solid rgba(247, 248, 249, 1);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-right: to-rem(8);
+    }
+
+    &-name {
+      margin-bottom: to-rem(4);
+    }
+
+    &-box {
+      width: to-rem(100);
+      height: to-rem(100);
+      border: to-rem(3) solid rgba(247, 247, 247, 1);
+      border-radius: to-rem(20);
+    }
+  }
+}

@@ -1,28 +1,61 @@
 .f {
-    &-b {
+    &-bold {
         font-weight: 700;
     }
 
-    &-s-b {
+    &-semibold {
         font-weight: 600;
     }
 
-    &-m {
+    &-medium {
         font-weight: 500;
     }
 
     &-h1 {
-        font-size: to-rem(28);
+        font-size: to-rem(40);
         font-weight: 700;
-        line-height: 120%;
-        text-transform: uppercase;
-
-        @media (min-width: 640px) {
-            font-size: to-rem(40);
-        }
+        line-height: to-rem(48);
 
         @media (min-width: 992px) {
-            font-size: to-rem(60);
+            font-size: to-rem(48);
+            line-height: to-rem(52);
         }
+    }
+
+    &-h2 {
+        font-size: to-rem(32);
+        font-weight: 700;
+        line-height: to-rem(40);
+    }
+
+    &-h3 {
+        font-size: to-rem(24);
+        font-weight: 700;
+        line-height: to-rem(28);
+    }
+
+    &-xl {
+        font-size: to-rem(20);
+        line-height: to-rem(32);
+    }
+
+    &-l {
+        font-size: to-rem(18);
+        line-height: to-rem(28);
+    }
+
+    &-m {
+        font-size: to-rem(16);
+        line-height: to-rem(24);
+    }
+
+    &-s {
+        font-size: to-rem(14);
+        line-height: to-rem(20);
+    }
+
+    &-xs {
+        font-size: to-rem(12);
+        line-height: to-rem(16);
     }
 }

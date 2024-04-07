@@ -1,5 +1,26 @@
 :root {
-    --color-dark-blue: #081645;
+    --color-l-blue: #DFEBF4;
+    --color-l-green: #DFF3E5;
+    --color-l-orange: #FFEBCC;
+    --color-l-red: #FDDAE0;
+    --color-l-purple: #F1CCE5;
+    --color-l-brown: #EEE3DA;
+
+    --color-blue: #609DC8;
+    --color-green: #5FC37B;
+    --color-orange: #FF9900;
+    --color-red: #F44565;
+    --color-purple: #B9027B;
+    --color-brown: #A97444;
+
+    --color-black: #000000;
+    --color-black-80: #333333;
+    --color-black-60: #666666;
+    --color-black-40: #999999;
+    --color-black-20: #cccccc;
+    --color-black-8: #ebebeb;
+    --color-black-3: #f7f7f7;
+    --color-white: #ffffff;
 }
 
 // на случай если CSS Properties не срабатывает с градиентом и прозрачностью
