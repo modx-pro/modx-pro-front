@@ -1,0 +1,28 @@
+.f {
+    &-b {
+        font-weight: 700;
+    }
+
+    &-s-b {
+        font-weight: 600;
+    }
+
+    &-m {
+        font-weight: 500;
+    }
+
+    &-h1 {
+        font-size: to-rem(28);
+        font-weight: 700;
+        line-height: 120%;
+        text-transform: uppercase;
+
+        @media (min-width: 640px) {
+            font-size: to-rem(40);
+        }
+
+        @media (min-width: 992px) {
+            font-size: to-rem(60);
+        }
+    }
+}
