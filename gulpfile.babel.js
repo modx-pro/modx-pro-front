@@ -3,66 +3,54 @@
 import gulp from "gulp";
 
 const requireDir = require("require-dir"),
-    paths = {
-        views: {
-            src: [
-                "./src/views/index.pug",
-                "./src/views/pages/*.pug"
-            ],
-            dist: "./dist/",
-            watch: [
-                "./src/blocks/**/*.pug",
-                "./src/views/**/*.pug"
-            ]
-        },
-        styles: {
-            src: ["./src/styles/*.{scss,sass}"],
-            dist: "./dist/styles/",
-            watch: [
-                "./src/blocks/**/*.{scss,sass}",
-                "./src/styles/**/*.{scss,sass}"
-            ]
-        },
-        scripts: {
-            src: "./src/js/index.js",
-            dist: "./dist/js/",
-            watch: [
-                "./src/blocks/**/*.js",
-                "./src/js/**/*.js"
-            ]
-        },
-        images: {
-            src: [
-                "./src/img/**/*.{jpg,jpeg,png,gif,tiff,svg}",
-                "!./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}"
-            ],
-            dist: "./dist/img/",
-            watch: "./src/img/**/*.{jpg,jpeg,png,gif,svg}"
-        },
-        videos: {
-          src: "./src/videos/*.mp4",
-          dist: "./dist/videos/",
-          watch: "./src/videos/*.mp4"
-        },
-        sprites: {
-            src: "./src/img/svg/*.svg",
-            dist: "./dist/img/sprites/",
-            watch: "./src/img/svg/*.svg"
-        },
-        fonts: {
-            src: "./src/fonts/**/*.{woff,woff2}",
-            dist: "./dist/fonts/",
-            watch: "./src/fonts/**/*.{woff,woff2}"
-        },
-        favicons: {
-            src: "./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}",
-            dist: "./dist/img/favicons/",
-        },
-        gzip: {
-            src: "./src/.htaccess",
-            dist: "./dist/"
-        }
-    };
+  paths = {
+    views: {
+      src: ["./src/views/index.pug", "./src/views/pages/*.pug"],
+      dist: "./docs/",
+      watch: ["./src/blocks/**/*.pug", "./src/views/**/*.pug"],
+    },
+    styles: {
+      src: ["./src/styles/*.{scss,sass}"],
+      dist: "./docs/styles/",
+      watch: ["./src/blocks/**/*.{scss,sass}", "./src/styles/**/*.{scss,sass}"],
+    },
+    scripts: {
+      src: "./src/js/index.js",
+      dist: "./docs/js/",
+      watch: ["./src/blocks/**/*.js", "./src/js/**/*.js"],
+    },
+    images: {
+      src: [
+        "./src/img/**/*.{jpg,jpeg,png,gif,tiff,svg}",
+        "!./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}",
+      ],
+      dist: "./docs/img/",
+      watch: "./src/img/**/*.{jpg,jpeg,png,gif,svg}",
+    },
+    videos: {
+      src: "./src/videos/*.mp4",
+      dist: "./docs/videos/",
+      watch: "./src/videos/*.mp4",
+    },
+    sprites: {
+      src: "./src/img/svg/*.svg",
+      dist: "./docs/img/sprites/",
+      watch: "./src/img/svg/*.svg",
+    },
+    fonts: {
+      src: "./src/fonts/**/*.{woff,woff2}",
+      dist: "./docs/fonts/",
+      watch: "./src/fonts/**/*.{woff,woff2}",
+    },
+    favicons: {
+      src: "./src/img/favicon/*.{jpg,jpeg,png,gif,tiff}",
+      dist: "./docs/img/favicons/",
+    },
+    gzip: {
+      src: "./src/.htaccess",
+      dist: "./docs/",
+    },
+  };
 
 requireDir("./gulp-tasks/");
 
