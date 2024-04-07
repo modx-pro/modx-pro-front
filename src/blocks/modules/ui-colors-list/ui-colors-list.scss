@@ -5,6 +5,8 @@
 
   &__items {
     display: flex;
+    flex-wrap: wrap;
+    gap: to-rem(16);
 
     &:not(:last-child) {
       margin-bottom: to-rem(32);

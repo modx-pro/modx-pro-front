@@ -626,6 +626,8 @@ img {
 
 .ui-colors-list__items {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .ui-colors-list__items:not(:last-child) {
