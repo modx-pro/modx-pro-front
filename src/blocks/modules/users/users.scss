@@ -1,0 +1,102 @@
+.users {
+  &__content {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr auto;
+    grid-gap: to-rem(20);
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 1440px) {
+      grid-gap: to-rem(48);
+    }
+  }
+
+  &__items {
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__list {
+    display: grid;
+    background: var(--color-white);
+    border: to-rem(4) solid var(--color-black-3);
+    border-radius: to-rem(20);
+    grid-template-columns: repeat(1, 1fr);
+
+    .user-card {
+      &:not(:last-child) {
+        border-bottom: to-rem(4) solid var(--color-black-3);
+      }
+    }
+  }
+
+  &-selection {
+    display: flex;
+    align-items: flex-start;
+    height: fit-content;
+    max-width: 480px;
+    min-width: 0;
+    padding: to-rem(24);
+    background: var(--color-white);
+    border: to-rem(4) solid var(--color-black-3);
+    border-radius: to-rem(20);
+    flex-direction: column;
+
+    &__item {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: to-rem(24);
+      }
+
+      &-title {
+        margin-bottom: to-rem(10);
+
+        @media (min-width: 1024px) {
+          margin-bottom: to-rem(24);
+        }
+      }
+
+      &-inputs {
+        display: grid;
+        width: 100%;
+        gap: to-rem(12);
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &-button {
+        display: inline-block;
+        width: 100%;
+      }
+
+      &-input {
+        display: none;
+      }
+
+      &-label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: to-rem(44);
+        text-align: center;
+        border-radius: to-rem(12);
+        transition: background-color 0.2s ease-out, color 0.2s ease-out;
+        background-color: var(--color-black-8);
+
+        &:hover {
+          background-color: var(--color-black-20);
+        }
+      }
+
+      input[type="radio"]:checked + label {
+        color: #fff;
+        background-color: var(--color-black);
+      }
+    }
+  }
+}

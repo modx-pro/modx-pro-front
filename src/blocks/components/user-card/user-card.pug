@@ -1,0 +1,30 @@
+mixin user_card(element, idx)
+  .user-card
+    .user-card__content
+      .user-card__number.f-m.f-bold= '№' + (idx + 1)
+      .user-card__info.user-card__border
+        a.user-card__avatar(href="")
+          img(src="https://thispersondoesnotexist.com", alt="")
+        .user-card__box
+          a.user-card__name.f-xl.f-medium(href="")= element.name
+          .user-card__line.f-xs
+            .user-card__line-name Регистрация:
+            .user-card__line-value.f-medium= element.registration
+              small= element.registrationTime
+          .user-card__line.f-xs
+            .user-card__line-name Активность:
+            .user-card__line-value.f-medium= element.activity
+              small= element.activityTime
+          .user-card__line.f-xs
+            .user-card__line-name Принимает заказы:
+            .user-card__line-value(class=element.acceptingOrders ? 'user-card__accepting-orders' : 'user-card__accepting-orders--not').f-medium= element.acceptingOrders ? 'Да' : 'Нет'
+    .user-card__statistics
+      .user-card__statistics-col.user-card__border
+        .user-card__statistics-name.f-s Комментариев:
+        .user-card__statistics-value.f-l.f-medium= element.comments
+      .user-card__statistics-col.user-card__border
+        .user-card__statistics-name.f-s Заметок:
+        .user-card__statistics-value.f-l.f-medium= element.articles
+      .user-card__statistics-col.user-card__border
+        .user-card__statistics-name.f-s Рейтинг:
+        .user-card__statistics-value.user-card__rating.f-l.f-medium(class=element.ratingPositive ? 'user-card__rating--positive' : 'user-card__rating--negative')= element.rating

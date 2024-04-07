@@ -1,0 +1,21 @@
+include data.pug
+
+section.users
+  .l-default
+    h1.l-page__title.f-h1 Пользователи
+    .users__inner
+      .users__content
+        .users__items
+          .users__search Search
+          .users__list
+            each user, idx in users
+              +user_card(user, idx)
+        .users-selection
+          each item in usersSelection
+            .users-selection__item
+              .users-selection__item-title.f-xl.f-bold=item.title
+              .users-selection__item-inputs
+                each input in item.inputs
+                  .users-selection__item-button
+                    input.users-selection__item-input(type='radio', name=input.name, value='', checked=input.checked, id=input.name)
+                    label.users-selection__item-label.f-m.f-bold(for='input.name')=input.title

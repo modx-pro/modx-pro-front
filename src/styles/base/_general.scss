@@ -59,8 +59,26 @@ body {
         }
 
         @media (min-width: 1200px) {
+            max-width: to-rem(1440);
+        }
+
+        @media (min-width: 1500px) {
             padding: 0;
         }
+    }
+
+    &-main {
+
+    }
+
+    &-page {
+      &__title {
+        margin-bottom: to-rem(24);
+
+        @media (min-width: 1024px) {
+          margin-bottom: to-rem(32);
+        }
+      }
     }
 }
 

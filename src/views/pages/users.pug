@@ -1,0 +1,13 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+  - const title = "Пользователи | MODX.pro"
+  - const styles_url = "styles/users.css"
+
+block content
+  include ../../blocks/modules/users/users.pug
+
+
+//- block scripts
+//-   script(src="js/main-page.js")
