@@ -1,10 +1,10 @@
 "use strict";
 (self["webpackChunkgulp_pug_starter"] = self["webpackChunkgulp_pug_starter"] || []).push([["vendor"],{
 
-/***/ "./node_modules/.pnpm/@fancyapps+ui@5.0.35/node_modules/@fancyapps/ui/dist/index.esm.js":
-/*!**********************************************************************************************!*\
-  !*** ./node_modules/.pnpm/@fancyapps+ui@5.0.35/node_modules/@fancyapps/ui/dist/index.esm.js ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/@fancyapps/ui/dist/index.esm.js":
+/*!******************************************************!*\
+  !*** ./node_modules/@fancyapps/ui/dist/index.esm.js ***!
+  \******************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);

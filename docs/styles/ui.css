@@ -510,6 +510,30 @@ textarea:focus::placeholder {
   opacity: 0 !important;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+img {
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast !important;
+}
+
+sub {
+  vertical-align: baseline;
+  position: relative;
+  bottom: -0.4em;
+}
+
 img {
   display: block;
   max-width: 100%;
