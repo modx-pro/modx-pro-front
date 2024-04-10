@@ -32,7 +32,45 @@
   <body>
     <header class="header" id="header">
       <div class="l-default">
-        <p>test</p>
+        <div class="header__wrapper">
+          <div class="header__inner header__inner--logo"><a class="header__logo" href="#"> <img src="./img/svg/ico-logo.svg" alt="title" srcset=""></a></div>
+          <div class="header__inner header__inner--nav"> 
+            <button class="header__btn-nav" type="button"></button>
+            <div class="header__sub-inner header__sub-inner--catalog">
+              <div class="header__catalog catalog"> 
+                <button class="catalog__btn" type="button">Другие продукты</button>
+                <ul class="catalog__list">
+                  <li class="catalog__item"><a class="catalog__link" href="#"><img class="catalog__ico" src="./img/icons-catalog/ico-modhost.png" alt=""><span>Modshost</span></a></li>
+                  <li class="catalog__item"><a class="catalog__link" href="#"><img class="catalog__ico" src="./img/icons-catalog/ico-modstore.png" alt=""><span>Modstore</span></a></li>
+                  <li class="catalog__item"><a class="catalog__link" href="#"><img class="catalog__ico" src="./img/icons-catalog/ico-moddocs.png" alt=""><span>Docs</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="header__sub-inner header__sub-inner--menu">
+              <div class="header__menu menu"> 
+                <buttin class="menu__btn" type="button"></buttin>
+                <ul class="menu__list"> 
+                  <li class="menu__item"> <a class="menu__link" href="#">Разделы</a></li>
+                  <li class="menu__item"> <a class="menu__link" href="#">Комментарии</a></li>
+                  <li class="menu__item"> <a class="menu__link" href="#">Публикации</a></li>
+                  <li class="menu__item"> <a class="menu__link" href="#">Пользователи</a></li>
+                  <li class="menu__item"> <a class="menu__link" href="#">Чат</a></li>
+                  <li class="menu__item"> <a class="menu__link" href="#">RSS</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="header__sub-inner header__sub-inner--search">
+              <div class="header__h-search h-search">
+                <button class="h-search__search" type="button">
+                  <p>1</p>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="header__inner header__inner--auth">
+            <button class="header__auth" type="button">Войти</button>
+          </div>
+        </div>
       </div>
     </header>
     <main class="l-main__content">

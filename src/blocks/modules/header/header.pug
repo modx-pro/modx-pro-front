@@ -1,4 +1,20 @@
 header.header#header
     .l-default
-        p test
-    
+        .header__wrapper
+            .header__inner.header__inner--logo
+                a(href="#").header__logo 
+                    img(src="./img/svg/ico-logo.svg" alt="title" srcset="")
+            .header__inner.header__inner--nav 
+                button(type="button").header__btn-nav
+                .header__sub-inner.header__sub-inner--catalog
+                    .header__catalog.catalog 
+                        include ../../components/catalog/catalog.pug
+                .header__sub-inner.header__sub-inner--menu
+                    .header__menu.menu 
+                        include ../../components/menu/menu.pug
+                .header__sub-inner.header__sub-inner--search
+                    .header__h-search.h-search
+                        button(type="button").h-search__search
+                            p 1
+            .header__inner.header__inner--auth
+                button(type="button").header__auth Войти
