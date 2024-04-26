@@ -1,1 +1,1 @@
-// import "%components%/sidebar/sidebar";
+import "%components%/n-search/n-search";

@@ -1,13 +1,103 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/blocks/components/n-search/n-search.js":
+/*!****************************************************!*\
+  !*** ./src/blocks/components/n-search/n-search.js ***!
+  \****************************************************/
+/***/ (function() {
+
+(function () {
+  var parent = document.querySelector(".n-search");
+  if (!parent) return;
+  var header = document.querySelector(".header");
+  var btnSearch = parent.querySelector(".n-search__button");
+  var btnClose = parent.querySelector(".n-search__button-close");
+  var items = parent.querySelectorAll(".n-search__link");
+  var buttonCatalog = parent.querySelector(".n-search__button-catalog");
+  var inputSearchMain = parent.querySelector(".n-search__inner--search-input [name='resource']");
+  var inputCategory = parent.querySelector(".n-search__inner--search-input [name='category']");
+  var flagOpenSearch = false;
+  function closeSearchWrapper() {
+    if (parent.classList.contains("active")) {
+      parent.classList.remove("active");
+    }
+    buttonCatalog.innerHTML = "Искать в разделе";
+    inputSearchMain.value = "";
+    inputCategory.value = "";
+    flagOpenSearch = false;
+  }
+  function initButtonsSearch() {
+    btnSearch.addEventListener("click", function (e) {
+      if (!flagOpenSearch || inputSearchMain.value == "") e.preventDefault();
+      if (!parent.classList.contains("active")) {
+        parent.classList.add("active");
+      }
+      flagOpenSearch = true;
+    });
+    btnClose.addEventListener("click", function () {
+      closeSearchWrapper();
+    });
+  }
+  function initSearchSelectList() {
+    items.forEach(function (item) {
+      item.addEventListener("click", function () {
+        buttonCatalog.innerHTML = item.innerHTML;
+        inputCategory.value = item.innerHTML;
+      });
+    });
+  }
+  function init(parent) {
+    initButtonsSearch(parent);
+    initSearchSelectList(parent);
+  }
+  init(parent);
+})();
+
+/***/ }),
+
+/***/ "./src/blocks/modules/header/header.js":
+/*!*********************************************!*\
+  !*** ./src/blocks/modules/header/header.js ***!
+  \*********************************************/
+/***/ (function() {
+
+(function () {
+  var header = document.querySelector(".header");
+  if (!header) return;
+  var buttonMenuOpen = header.querySelector(".header__button-open-menu");
+  var buttonMenuClose = header.querySelector(".header__button-close-menu");
+  var headerOverflow = header.querySelector(".header__overlay");
+  buttonMenuOpen.addEventListener("click", function () {
+    if (!header.classList.contains("menu-active")) {
+      header.classList.add("menu-active");
+    }
+  });
+  buttonMenuClose.addEventListener("click", function () {
+    if (header.classList.contains("menu-active")) {
+      header.classList.remove("menu-active");
+    }
+  });
+  headerOverflow.addEventListener("click", function () {
+    if (header.classList.contains("menu-active")) {
+      header.classList.remove("menu-active");
+    }
+  });
+})();
+
+/***/ }),
+
 /***/ "./src/js/import/components.js":
 /*!*************************************!*\
   !*** ./src/js/import/components.js ***!
   \*************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-// import "%components%/sidebar/sidebar";
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_n_search_n_search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %components%/n-search/n-search */ "./src/blocks/components/n-search/n-search.js");
+/* harmony import */ var _components_n_search_n_search__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_n_search_n_search__WEBPACK_IMPORTED_MODULE_0__);
+
 
 /***/ }),
 
@@ -15,9 +105,13 @@
 /*!**********************************!*\
   !*** ./src/js/import/modules.js ***!
   \**********************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-// import "%modules%/header/header";
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
+/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_header_header__WEBPACK_IMPORTED_MODULE_0__);
+
 // import "%modules%/footer/footer";
 
 /***/ }),
@@ -31,9 +125,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
-/* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_import_modules__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./import/components */ "./src/js/import/components.js");
-/* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_import_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/index.esm.js");
 
 

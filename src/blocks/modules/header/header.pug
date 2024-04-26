@@ -1,11 +1,15 @@
 header.header#header
     .l-default
         .header__wrapper
+            .header__overlay
             .header__inner.header__inner--logo
                 a(href="#").header__logo 
                     img(src="./img/svg/ico-logo.svg" alt="title" srcset="")
-            .header__inner.header__inner--nav 
-                button(type="button").header__btn-nav
+            .header__inner.header__inner--nav
+                .header__sub-inner.header__sub-inner--logo 
+                    a(href="#").header__logo 
+                        img(src="./img/svg/ico-logo.svg" alt="title" srcset="")
+                    button(type="button").header__button-close-menu
                 .header__sub-inner.header__sub-inner--catalog
                     .header__catalog.catalog 
                         include ../../components/catalog/catalog.pug
@@ -13,8 +17,8 @@ header.header#header
                     .header__menu.menu 
                         include ../../components/menu/menu.pug
                 .header__sub-inner.header__sub-inner--search
-                    .header__h-search.h-search
-                        button(type="button").h-search__search
-                            p 1
+                    .header__n-search.n-search
+                        include ../../components/n-search/n-search.pug
             .header__inner.header__inner--auth
+                button(type="button").header__button-open-menu
                 button(type="button").header__auth Войти
