@@ -1,20 +1,16 @@
 "use strict";
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import { src, dest } from "gulp";
-import { paths, config } from "./config/config.mjs";
+import { paths, config, alias } from "../config/config.mjs";
 
 import webpackStream from "webpack-stream";
 import browsersync from "browser-sync";
 
-// const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const pathFiles = () => (config.onTs ? paths.scripts.srcTs : paths.scripts.src);
+const pathFiles = config.onTs ? paths.scripts.srcTs : paths.scripts.src;
 
-const webpackConfig = {
+export const webpackConfig = {
     entry: {
-        main: "./" + pathFiles(),
+        main: "./" + pathFiles,
     },
     watch: true,
     watchOptions: {
@@ -24,15 +20,12 @@ const webpackConfig = {
     },
     mode: config.mode.isDev ? "development" : "production",
     output: {
-        filename: "scripts.js",
+        filename: config.scriptsFileNameOutput,
         publicPath: "/",
     },
     resolve: {
-        alias: {
-            Components: path.resolve(__dirname, "../" + paths.components),
-            Sections: path.resolve(__dirname, "../" + paths.sections),
-            Elements: path.resolve(__dirname, "../" + paths.elements),
-        },
+        alias: alias,
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".mjs"],
     },
     module: {
         rules: [
@@ -55,20 +48,14 @@ const webpackConfig = {
     },
 };
 
-const scriptsWatchTs = () => {
-    return src(paths.scripts.srcTs)
-        .pipe(dest(paths.scripts.dist))
-        .on("end", browsersync.reload);
-};
-
 const scripts = () => {
-    return src(paths.scripts.srcTs)
+    return src(pathFiles)
         .pipe(webpackStream(webpackConfig), null, function (err, stats) {
             console.log("err " + err);
             console.log("stats " + stats);
         })
         .pipe(dest(paths.scripts.dist))
-        .on("end", browsersync.reload);
+        .pipe(browsersync.reload({ stream: true }));
 };
 
-export { scripts, scriptsWatchTs };
+export default scripts;

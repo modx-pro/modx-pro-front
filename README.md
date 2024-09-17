@@ -5,6 +5,7 @@
 -   Gulp v5
 -   Webpack для обработки js и ts
 -   Единый `config.mjs`
+-   Псевдонимы путей для `.scss`,`.ts`,`.js` файлов
 -   Небольшой вес node_modules (Только необходимое)
 -   Автоматическая генерация
     -   Для создания компонента, элемента или секции `gulp create --component || element || section --test`
@@ -13,6 +14,10 @@
     -   (По умолчанию - включен)
 -   TypeScript опционально
     -   (По умолчанию - включен)
+-   Svg sprite
+    -   `<svg>
+            <use href="./sprite/sprite.svg#test-1"></use>
+        </svg>`
 -   Импорт `.ts .js .mjs`
 -   Swiper включен в сборку
 
@@ -41,16 +46,27 @@
 -   Запускаем конвертацию в формат .woff(.woff2) `npm run ttfToWoff`
 -   Подключаем шрифты в mixin scss `"app/styles/fonts.scss"` командой `npm run fontsInStyle`
 
-## ❗️ Для путей `.js`, `.ts` файлов работают псевдонимы путей
+## ❗️ Alias
+
+-   Для путей `.scss`,`.ts`,`.js` файлов работают псевдонимы
+-   Задавать по адресу: `./gulp/config/config.mjs`
 
 ```js
-    alias: {
-        Components: path.resolve(__dirname, "../" + paths.components),
-        Sections: path.resolve(__dirname, "../" + paths.sections),
-        Elements: path.resolve(__dirname, "../" + paths.elements),
-    }
+    scss: {
+        "@Sections": "./../pages/sections",
+        "@Components": "./../pages/components",
+        "@Elements": "./../pages/elements",
+    },
+    js: {
+        "@Sections": path.resolve(__dirname, "../../" + paths.sections),
+        "@Components": path.resolve(__dirname, "../../" + paths.components),
+        "@Elements": path.resolve(__dirname, "../../" + paths.elements),
+    },
 ```
-Пример: ```import 'Components/test/test.ts';```
+
+Примеры:
+`import '@Element/test/test.ts';`
+`import 'Components/test/test.ts';`
 
 ## :open_file_folder: Файловая структура
 
@@ -62,6 +78,7 @@ gulp-v5-starter
 │   ├── pages
 │   ├── scripts
 │   ├── styles
+│   ├── svg
 │   └── video
 ├── dist
 ├── package.json

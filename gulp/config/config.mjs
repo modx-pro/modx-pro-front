@@ -1,3 +1,6 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 import { hideBin } from "yargs/helpers";
 import { keyPug } from "./key-pug.mjs";
 import { keyTs } from "./key-ts.mjs";
@@ -5,8 +8,13 @@ import { keyTs } from "./key-ts.mjs";
 const app = "app/";
 const dist = "dist/";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = hideBin(process.argv)[1] === "--production";
 const isDev = !isProd;
+
+const aliasSections = "Sections";
+const aliasComponents = "Components";
+const aliasElements = "Elements";
 
 export const config = {
     mode: {
@@ -15,11 +23,14 @@ export const config = {
     },
     onPug: keyPug,
     onTs: keyTs,
+    scriptsFileNameOutput: "scripts.js",
 };
 
 export const paths = {
     app: app,
     dist: dist,
+    jsConfig: "./jsconfig.json",
+    tsConfig: "./tsconfig.json",
     keyPug: "gulp/config/key-pug.mjs",
     keyTs: "gulp/config/key-ts.mjs",
     components: app + "pages/components",
@@ -49,8 +60,7 @@ export const paths = {
     scripts: {
         src: app + "scripts/main.js",
         srcTs: app + "scripts/main.ts",
-        watch: app + "/**/*.{js,mjs}",
-        watchTs: app + "/**/*.ts",
+        watch: app + "/**/*.{js,mjs,ts}",
         dist: dist + "js/",
     },
     fonts: {
@@ -64,8 +74,35 @@ export const paths = {
         dist: app + "fonts/",
     },
     images: {
-        src: app + "images/**/*.{jpg,png,svg,gif,ico,webp}",
+        src: app + "images/**/*.{jpg,png,svg,gif,ico,webp,jpeg}",
         watch: app + "images/**/*.{jpg,png,svg,gif,ico,webp}",
         dist: dist + "images/",
+    },
+    svgSprite: {
+        src: app + "svg/**/*.svg",
+        watch: app + "svg/**/*.svg",
+        dist: dist + "sprite/",
+    },
+};
+
+export const alias = {
+    [aliasSections]: "../../" + paths.sections,
+    [aliasComponents]: "../../" + paths.components,
+    [aliasElements]: "../../" + paths.elements,
+};
+
+export const jsConfig = {
+    compilerOptions: {
+        moduleResolution: "node",
+        noImplicitAny: true,
+        module: "es6",
+        target: "es5",
+        allowJs: true,
+        baseUrl: "./",
+        paths: {
+            [aliasSections + "/*"]: [paths.sections + "/*"],
+            [aliasComponents + "/*"]: [paths.components + "/*"],
+            [aliasElements + "/*"]: [paths.elements + "/*"],
+        },
     },
 };

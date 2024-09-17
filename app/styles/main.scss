@@ -27,11 +27,10 @@
 @import "./elements/sl-arrows";
 
 
-@import "./../pages/components/header/header";
-@import "./../pages/components/catalog/catalog";
-@import "./../pages/components/menu/menu";
-@import "./../pages/components/n-search/n-search";
+@import "Components/header/header";
+@import "Components/catalog/catalog";
+@import "Components/menu/menu";
+@import "Components/n-search/n-search";
+@import "Components/user-card/user-card.scss";
 
-@import "./../pages/elements/user-card/user-card.scss";
-
-@import "./../pages/sections/users/users";
+@import "Sections/users/users";
