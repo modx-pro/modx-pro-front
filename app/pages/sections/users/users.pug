@@ -1,5 +1,31 @@
-include data.pug
+include ./data.pug
 
-section.users#users
-    .users__container.container
+.document__users.users
+    .users__table 
+        each user, index in users
+            .users__card-user.card-user 
+                .card-user__body
+                    .card-user__count=`# ${index}`
+                    .card-user__photo 
+                        img(src=user.avatar, alt="")
+                    .card-user__text 
+                        .card-user__name=user.name
+                        .card-user__info 
+                            span Регистрация:
+                            span=user.registration
+                        .card-user__info 
+                            span Активность:
+                            span=user.activity
+                        .card-user__info.card-user__info--order
+                            span Принимает заказы:
+                            span(class=`${user.ratingPositive ? 'get-order' : ''}`)=`${user.ratingPositive ? 'Да' : 'Нет'}`
+                    .card-user__statistic.card-user__statistic--comments
+                        span Комментариев
+                        span=user.comments
+                    .card-user__statistic
+                        span Заметок
+                        span=user.articles
+                    .card-user__statistic.card-user__statistic--rating
+                        span Рейтинг
+                        span(class=`${user.ratingPositive ? 'rating-pos' : 'rating-neg'}`)=user.rating
         

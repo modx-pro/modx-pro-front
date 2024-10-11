@@ -25,12 +25,17 @@
 @import "./elements/input";
 @import "./elements/s-title";
 @import "./elements/sl-arrows";
+@import "./elements/card-user";
+@import "./elements/btn-select";
 
+@import "Elements/sidebars/sb-users/sb-users";
 
 @import "Components/header/header";
 @import "Components/catalog/catalog";
 @import "Components/menu/menu";
 @import "Components/n-search/n-search";
-@import "Components/user-card/user-card.scss";
+@import "Components/user-card/user-card";
+@import "Components/ch-button/ch-button";
 
+@import "Sections/document/document";
 @import "Sections/users/users";

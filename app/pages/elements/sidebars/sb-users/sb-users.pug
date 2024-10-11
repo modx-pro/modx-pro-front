@@ -1,0 +1,22 @@
+.document__sb-users.sb-users
+    .sb-users__align-button
+        button(type="button").sb-users__button
+    .sb-users__wrapper 
+        .sb-users__inner 
+            .sb-users__title Принимает заказы?
+            .sb-users__align(data-ch-button-wrapper)
+                .sb-users__ch-button.ch-button
+                    input(type="checkbox" name="take-orders" id="take-orders" class="ch-button__input")
+                    label(for="take-orders" class="ch-button__label") Да
+                .sb-users__ch-button.ch-button
+                    input(type="checkbox" name="no-take-orders" id="no-take-orders" class="ch-button__input")
+                    label(for="no-take-orders" class="ch-button__label") Нет
+        .sb-users__inner 
+            .sb-users__title Положительный рейтинг?
+            .sb-users__align(data-ch-button-wrapper) 
+                .sb-users__ch-button.ch-button
+                    input(type="checkbox" name="pos-rating" id="pos-rating" class="ch-button__input")
+                    label(for="pos-rating" class="ch-button__label") Да
+                .sb-users__ch-button.ch-button
+                    input(type="checkbox" name="neg-rating" id="neg-rating" class="ch-button__input")
+                    label(for="neg-rating" class="ch-button__label") Нет

@@ -1,3 +1,16 @@
 .users {
     
+    &__table {
+        border-radius: var(--brWrapper);
+        padding: 4px;
+        border: var(--borderElem);
+    }
+
+    &__card-user {
+        border-bottom: var(--borderElem);
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
 }

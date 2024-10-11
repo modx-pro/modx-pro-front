@@ -1,0 +1,26 @@
+.document {
+
+    &__wrapper {
+        @include flex-wrap();
+    }
+
+    &__inner {
+        &--content {
+            width: 68%;
+        }
+
+        &--sidebar {
+            width: 30%;
+            
+            @include for-tablet {
+                order: -1;
+                margin-bottom: 24px;
+            }
+        }
+
+        @include for-tablet {
+            width: 100%;
+        }
+    }
+
+}

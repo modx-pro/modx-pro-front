@@ -4,4 +4,11 @@ block variables
     - const title = "Пользователи"
 
 block content 
-    include sections/users/users.pug
+    section.document
+        .document__container.container 
+            h1.document__s-title.s-title Пользователи
+            .document__wrapper 
+                .document__inner.document__inner--content
+                    include sections/users/users.pug
+                .document__inner.document__inner--sidebar
+                    include elements/sidebars/sb-users/sb-users.pug

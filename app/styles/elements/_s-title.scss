@@ -1,4 +1,12 @@
 .s-title {
-    span {
+    font-family: $fontMain;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 108%;
+    color: $black;
+    margin-bottom: 32px;
+
+    @include for-tablet {
+        margin-bottom: 24px;
     }
 }
