@@ -1,4 +1,5 @@
 .card-user {
+
     &__body {
         position: relative;
         display: flex;
@@ -62,11 +63,16 @@
     }
 
     &__name {
+        position: relative;
         font-weight: 500;
         font-size: 20px;
         line-height: 140%;
         color: $black;
         margin-bottom: 4px;
+
+        &:hover {
+            text-decoration: underline;
+        }
 
         @include for-sm-desktop {
             font-size: 18px;

@@ -9,7 +9,7 @@ include ./data.pug
                     .card-user__photo 
                         img(src=user.avatar, alt="")
                     .card-user__text 
-                        .card-user__name=user.name
+                        a(href="#").card-user__name=user.name
                         .card-user__info 
                             span Регистрация:
                             span=user.registration
